@@ -4,7 +4,7 @@
         {
             "label": "Compile",
             "type": "shell",
-            "command": "clang++ -std=c++20 -glldb -fstandalone-debug ${relativeFile} -o ${fileBasenameNoExtension}"
+            "command": "if ! [ -f ${fileBasenameNoExtension} ] || [ $(date --reference=${fileBasenameNoExtension} +%s) -lt $(date --reference=${relativeFile} +%s) ]; then echo \"Recompilation...\"; clang++ -std=c++20 -glldb -fstandalone-debug ${relativeFile} -o ${fileBasenameNoExtension}; fi"
         },
         {
             "label": "Compile G++",
