@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "if ! [ -f ${fileBasenameNoExtension} ] || [ $(date --reference=${fileBasenameNoExtension} +%s) -lt $(date --reference=${relativeFile} +%s) ]; then echo \"Recompilation...\"; clang -glldb -fstandalone-debug ${relativeFile} -o ${fileBasenameNoExtension}; fi"
+        },
+        {
+            "label": "Compile GCC",
+            "type": "shell",
+            "command": "gcc -ggdb ${relativeFile} -o ${fileBasenameNoExtension}"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "rm ${fileBasenameNoExtension}"
+        }
+    ]
+}
