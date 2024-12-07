@@ -12,3 +12,10 @@ vim.api.nvim_create_user_command(
         desc = "Copy the default C configuration to the current directory."
     }
 )
+vim.api.nvim_create_user_command(
+    "Clangfmt",
+    "!cp ~/.config/nvim/clangfmt/.clang-format .",
+    {
+        desc = "Copy the default formatter configuration into the current directory."
+    }
+)
