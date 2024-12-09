@@ -41,7 +41,11 @@ local cmp_action = lsp_zero.cmp_action()
 cmp.setup({
   sources = {
     {name = 'path'},
-    --{name = 'nvim_lsp'},
+    {name = 'nvim_lsp',
+        entry_filter = function(entry, ctx)
+            return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+        end,
+    },
     {name = 'luasnip', keyword_length = 2},
     {name = 'buffer', keyword_length = 3},
   },
