@@ -9,12 +9,12 @@
         {
             "label": "Compile G++",
             "type": "shell",
-            "command": "g++ -ggdb ${relativeFile} -o ${fileBasenameNoExtension}"
+            "command": "g++ -ggdb ${relativeFile} -o ${fileBasenameNoExtension}.bin"
         },
         {
             "label": "Clean",
             "type": "shell",
-            "command": "rm ${fileBasenameNoExtension}"
+            "command": "rm -f ${fileBasenameNoExtension} ${fileBasenameNoExtension}.bin"
         }
     ]
 }
