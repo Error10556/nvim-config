@@ -14,7 +14,7 @@
         {
             "label": "Clean",
             "type": "shell",
-            "command": "rm -f ${fileBasenameNoExtension} ${fileBasenameNoExtension}.bin"
+            "command": "rm -f ${fileBasenameNoExtension}{,.bin}"
         }
     ]
 }

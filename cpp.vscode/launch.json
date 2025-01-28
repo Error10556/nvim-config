@@ -7,7 +7,7 @@
             "name": "C++",
             "preLaunchTask": "Compile",
             "expressions": "native",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}"
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.bin"
         }
     ]
 }
