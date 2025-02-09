@@ -22,3 +22,5 @@ vim.keymap.set('n', '<leader>o', 'O<CR>')
 vim.keymap.set('n', '<leader>{', 'A{<CR>}<Esc>O')
 vim.keymap.set('n', '<leader>[', 'A[<CR>]<Esc>O')
 
+vim.keymap.set('n', '<leader>c', 'iconst <Esc>f i&<Esc>')
+vim.keymap.set('n', '<leader>a', 'ggVG"+y')
