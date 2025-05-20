@@ -1,0 +1,2 @@
+require("conf")
+print("Hello!")
