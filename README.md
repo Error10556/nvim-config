@@ -102,12 +102,12 @@ with debugger settings convenient to use with competitive programming problems.
 
 ## Credits
 
-1. [ThePrimeagen](https://www.youtube.com/@ThePrimeagen) for the video [0 to
-   LSP](https://youtu.be/w7i4amO_zaE);
-2. [IgorLFS](https://github.com/igorlfs) for [an awesome
-   article](https://igorlfs.github.io/neovim-cpp-dbg) that explains setting up
-a debugger.
-3. [VonHeikemen](https://github.com/VonHeikemen) for [another amazing
-   article](https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e)
+- [ThePrimeagen](https://www.youtube.com/@ThePrimeagen) for the video [0 to
+LSP](https://youtu.be/w7i4amO_zaE);
+- [IgorLFS](https://github.com/igorlfs) for [an awesome
+article](https://igorlfs.github.io/neovim-cpp-dbg) that explains setting up a
+debugger;
+- [VonHeikemen](https://github.com/VonHeikemen) for [another amazing
+article](https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e)
 that explains integration of LSP servers.
 
