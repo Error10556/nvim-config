@@ -18,13 +18,12 @@ However, this configuration provides LSP support for **many languages**.
 3. Change directory into `~/.config/nvim`.
 4. Clone this repo: `git clone https://github.com/Error10556/nvim-config.git . --depth=1`
 5. Optionally, install language servers, formatters, linters, or debug adapters:
-open up `nvim`, type `:Mason`, and pick what you like. I use 
+open up `nvim`, type `:Mason`, and pick what you like. For a smooth experience, use
     - `clangd`
     - `debugpy` (but installed as a system-wide package `python3-debugpy`)
     - `codelldb`
     - `lua-language-server`
-    - `python-lsp-server`  
-Install these for a smooth experience.
+    - `python-lsp-server`
 
 ## How to use
 
