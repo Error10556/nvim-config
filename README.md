@@ -1,4 +1,4 @@
-# Neovim is COOKING 🗣️🗣️🗣️🔥🔥🔥
+# Neovim is COOKING 🔥🔥🔥
 
 This repo is a minimalistic yet capable configuration for Neovim.
 
