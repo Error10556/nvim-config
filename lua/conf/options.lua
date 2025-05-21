@@ -39,7 +39,6 @@ vim.keymap.set('n', '<leader>o', 'O<CR>')
 vim.keymap.set('n', '<leader>{', 'A{<CR>}<Esc>O')
 vim.keymap.set('n', '<leader>[', 'A[<CR>]<Esc>O')
 
-vim.keymap.set('n', '<leader>c', 'iconst <Esc>f i&<Esc>')
 vim.keymap.set('n', '<leader>a', 'ggVG"+y')
 
 vim.api.nvim_create_user_command('Theme', function()
@@ -48,4 +47,26 @@ vim.api.nvim_create_user_command('Theme', function()
     else
         vim.opt.background = 'light'
     end
-end, { desc = 'Switch light/dark theme' } )
+end, { desc = 'Switch light/dark theme' })
+
+vim.api.nvim_create_user_command('Codeforces', function()
+        local exists, stat = pcall(vim.uv.fs_lstat, '.vscode')
+        if exists and stat then
+            vim.print('.vscode already exists!')
+        else
+            vim.cmd([[!cp -r ~/.config/nvim/cf.vscode .vscode]])
+            vim.print('Copied the Codeforces setup here')
+        end
+    end,
+    { desc = 'Set up a codeforces-optimized .vscode configuration' })
+
+vim.api.nvim_create_user_command('Clangfmt', function()
+        local exists, stat = pcall(vim.uv.fs_lstat, '.clang-format')
+        if exists and stat then
+            vim.print('.clang-format already exists!')
+        else
+            vim.cmd([[!cp -r ~/.config/nvim/clangfmt/.clang-format .]])
+            vim.print('Copied the formatter settings here')
+        end
+    end,
+    { desc = 'Create a basic Microsoft-style C++ .clang-format file' })
