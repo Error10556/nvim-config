@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function()
         local bufmap = function(mode, lhs, rhs)
-            local opts = {buffer = true}
+            local opts = { buffer = true }
             vim.keymap.set(mode, lhs, rhs, opts)
         end
         bufmap('n', 'K', vim.lsp.buf.hover)
@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', 'gl', vim.diagnostic.open_float)
         bufmap('n', '[d', vim.diagnostic.goto_prev)
         bufmap('n', ']d', vim.diagnostic.goto_next)
+        bufmap('n', '<leader>=', vim.lsp.buf.format)
     end
 })
 
@@ -34,7 +35,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require('luasnip.loaders.from_vscode').lazy_load()
 
 -- autocompletion
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local select_opts = { behavior = cmp.SelectBehavior.Select }
@@ -46,8 +47,8 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp', keyword_length = 1 },
-        { name = 'buffer', keyword_length = 2 },
-        { name = 'luasnip', keyword_length = 2 },
+        { name = 'buffer',   keyword_length = 2 },
+        { name = 'luasnip',  keyword_length = 2 },
     },
     window = {
         documentation = cmp.config.window.bordered()
@@ -71,8 +72,8 @@ cmp.setup({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
-        ['<Tab>'] = cmp.mapping.confirm({select = true}),
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         ['<C-l>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(1) then
@@ -80,7 +81,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
 
         ['<C-k>'] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
@@ -88,11 +89,11 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
 
         ['<C-Space>'] = cmp.mapping(function(_)
             cmp.complete()
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
     }
 })
 

@@ -1,15 +1,10 @@
 local dapconfig = function()
     -- Signs
-    vim.diagnostic.config({
-        signs = {
-            text = {
-                DapBreakpoint = '󰮔',
-                DapBreakpointCondition = '󰮕',
-                DapBreakpointRejected = '󰮈',
-                DapLogPoint = '󰮆',
-            },
-        }
-    })
+    vim.fn.sign_define('DapBreakpoint', { text = "●", texthl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpointCondition', { text = "󰮕", texthl = 'DapBreakpointCondition' })
+    vim.fn.sign_define('DapBreakpointRejected', { text = "󰮈", texthl = 'DapBreakpointRejected' })
+    vim.fn.sign_define('DapLogPoint', { text = "󰮆", texthl = 'DapLogPoint' })
+
 
     local dap = require("dap")
 
@@ -82,6 +77,26 @@ return {
                 }
             })
             vim.keymap.set('n', '<leader>d', function() require('dapui').toggle() end)
+            vim.keymap.set('n', "<leader>ps", function()
+                local widgets = require("dap.ui.widgets")
+                widgets.centered_float(widgets.scopes, { border = "rounded" })
+            end)
+            vim.keymap.set('n', "<F1>", function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end)
+            vim.keymap.set('n', "<F5>", "<CMD>DapContinue<CR>")
+            vim.keymap.set('n', "<F6>", function() require("dap").run_to_cursor() end)
+            vim.keymap.set('n', "<F7>", "<CMD>DapTerminate<CR>")
+            vim.keymap.set('n', "<F9>", "<CMD>DapToggleBreakpoint<CR>")
+            vim.keymap.set('n',
+                "<F21>",
+                function()
+                    vim.ui.input(
+                        { prompt = "Breakpoint condition: " },
+                        function(input) require("dap").set_breakpoint(input) end
+                    )
+                end)
+            vim.keymap.set('n', "<F10>", "<CMD>DapStepOver<CR>")
+            vim.keymap.set('n', "<F11>", "<CMD>DapStepInto<CR>")
+            vim.keymap.set('n', "<F12>", "<CMD>DapStepOut<CR>" )
         end,
         dependencies = {
             {
