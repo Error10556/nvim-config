@@ -1,11 +1,5 @@
 require('mason').setup()
 require('mason-lspconfig').setup()
-local lspconfig = require('lspconfig')
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-lspconfig.lua_ls.setup({
-    capabilities = lsp_capabilities
-})
 
 -- keybindings
 vim.api.nvim_create_autocmd('LspAttach', {
