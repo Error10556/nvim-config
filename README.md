@@ -7,11 +7,11 @@ This repo is a minimalistic yet capable configuration for Neovim.
 If you program in **C++** or **Python**, you are going to enjoy the advanced debugging
 support provided by this configuration. Especially if you do competitive programming.
 
-However, this configuration provides LSP support for **many languages**, so there's that.
+However, this configuration provides LSP support for **many languages**.
 
 ## How to install
 
-1. Install one of these fonts: [https://www.nerdfonts.com/font-downloads]. That
+1. Install one of these fonts: https://www.nerdfonts.com/font-downloads. That
    is, put the font files into a new subdirectory of
 `/usr/share/fonts/truetype/` and run `fc-cache`.
 2. Install `ripgrep` and `xclip`.
@@ -23,7 +23,7 @@ open up `nvim`, type `:Mason`, and pick what you like. I use
     - `debugpy` (but installed as a system-wide package `python3-debugpy`)
     - `codelldb`
     - `lua-language-server`
-    - `python-lsp-server`
+    - `python-lsp-server`  
 Install these for a smooth experience.
 
 ## How to use
@@ -32,7 +32,7 @@ The configuration makes several remaps (custom bindings) and creates a few user 
 
 ### General
 
-- <kbd>Shift</kbd> + <kbd>E</kbd>: open file explorer, `netrw`.
+- <kbd>Shift</kbd> + <kbd>E</kbd>: open Neovim's default file explorer, `netrw`.
 - <kbd>Space</kbd>, <kbd>S</kbd>: replace all occurrences of the word under the caret.
 - <kbd>Space</kbd>, <kbd>O</kbd>: when used on an empty line, insert two empty lines (one above, one below) and start editing the middle one.
 - <kbd>Space</kbd>, <kbd>[</kbd>: insert a pair of square brackets and start editing an empty line between them.
@@ -61,6 +61,7 @@ insert a pair of curly braces and start editing an empty line between them.
 - `:Clangfmt`: add a `.clang-format` file to the current working directory that
 contains my preferred C++ formatting settings.
 - <kbd>Ctrl</kbd> + <kbd>Space</kbd>: bring up the autocompletion menu if it is not already open.
+
 **In the autocompletion menu:**
 - <kbd>↑</kbd>: select the previous option.
 - <kbd>↓</kbd>: select the next option.
@@ -68,6 +69,7 @@ contains my preferred C++ formatting settings.
 - <kbd>Ctrl</kbd> + <kbd>D</kbd>: scroll the documentation downwards.
 - <kbd>Tab</kbd> or <kbd>Enter</kbd>: select the current option. If no option is selected,
 <kbd>Tab</kbd> selects the first one, and <kbd>Enter</kbd> inserts a newline.
+
 **After selecting a snippet:**
 - <kbd>Ctrl</kbd> + <kbd>L</kbd>: edit the next placeholder.
 - <kbd>Ctrl</kbd> + <kbd>K</kbd>: edit the previous placeholder.
@@ -83,6 +85,7 @@ are `Build`, `Build with a different compiler`, `Clean`, etc.).
 - <kbd>Shift</kbd> + <kbd>F9</kbd>: add a conditional breakpoint.
 - `:Codeforces`: add a `.vscode` settings directory to the current working directory
 with debugger settings convenient to use with competitive programming problems.
+
 **When a program is running:**
 - <kbd>F1</kbd>: see the value of a variable under the caret.
 - <kbd>F5</kbd>: resume running.
