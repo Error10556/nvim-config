@@ -16,4 +16,3 @@ vim.cmd[[colorscheme melange]]
 --lspconfig.cpp
 
 require('conf.configlsp')
-require('conf.configdap')
