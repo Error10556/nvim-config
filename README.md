@@ -100,6 +100,17 @@ with debugger settings convenient to use with competitive programming problems.
 - <kbd>Space</kbd>, <kbd>F</kbd>, <kbd>G</kbd>: search file names in the Git repository, if it is initialized.
 - `:RG`: search file contents.
 
+### Custom colorscheme
+Do not like `melange`? Want to add custom keybindings? Write your own options
+to `~/.config/nvim/lua/conf/custom.lua`. This file will be loaded last. If it
+does not exist, the `melange` colorscheme gets applied.
+
+Example of `custom.lua`:
+
+```
+vim.cmd[[colorscheme koehler]]
+```
+
 ## Credits
 
 - [ThePrimeagen](https://www.youtube.com/@ThePrimeagen) for the video [0 to
