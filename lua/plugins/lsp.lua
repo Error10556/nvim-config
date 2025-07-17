@@ -1,7 +1,19 @@
 return {
-    {"neovim/nvim-lspconfig"},
-    {"mason-org/mason.nvim"},
-    {"williamboman/mason-lspconfig.nvim"},
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {
+            {"neovim/nvim-lspconfig"},
+            {
+                "mason-org/mason.nvim",
+                config = true
+            },
+        },
+        opts = {
+            ensure_installed = {
+                "clangd", "gopls"
+            }
+        }
+    },
     {"hrsh7th/nvim-cmp"},
     {"hrsh7th/cmp-buffer"},
     {
