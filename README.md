@@ -73,6 +73,37 @@ contains my preferred C++ formatting settings.
 - <kbd>Ctrl</kbd> + <kbd>L</kbd>: edit the next placeholder.
 - <kbd>Ctrl</kbd> + <kbd>K</kbd>: edit the previous placeholder.
 
+### Running simple non-interactive programs
+- <kbd>Space</kbd>, <kbd>Z</kbd>: execute `./run-current-program.sh "(your file)"`
+in Neovim's terminal
+
+My quick-and-dirty `run-current-program.sh` for Haskell:
+```bash
+#!/bin/env bash
+set -e
+if [ ! -f prog ] || [ "$(date --reference=prog +%s)" -lt "$(date --reference="$1" +%s)" ]; then
+    ghc -o prog "$1"
+fi
+echo
+./prog
+```
+For C++ you could have:
+```bash
+#!/bin/env bash
+set -e
+if [ ! -f prog ] || [ "$(date --reference=prog +%s)" -lt "$(date --reference="$1" +%s)" ]; then
+    g++ "$1" -o prog
+fi
+echo
+./prog
+```
+For Python:
+```bash
+#!/bin/env bash
+echo
+python "$1"
+```
+
 ### Debugging
 - <kbd>Space</kbd>, <kbd>D</kbd>: open or close the debugging interface.
 - <kbd>Space</kbd>, <kbd>T</kbd>: open or close the task log (possible tasks
