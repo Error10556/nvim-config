@@ -1,12 +1,13 @@
 require('mason').setup()
 require('mason-lspconfig').setup()
-vim.lsp.config('gopls', {
+vim.lsp.config.gopls = {
     settings = {
         gopls = {
             gofumpt = true
         }
     }
-})
+}
+vim.lsp.enable('hls')
 
 -- keybindings
 vim.api.nvim_create_autocmd('LspAttach', {

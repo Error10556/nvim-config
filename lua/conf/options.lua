@@ -41,6 +41,11 @@ vim.keymap.set('n', '<leader>[', 'A[<CR>]<Esc>O')
 
 vim.keymap.set('n', '<leader>a', 'ggVG"+y')
 
+vim.keymap.set('n', '<leader>z', function ()
+    local filename = vim.fn.expand('%')
+    vim.cmd('!./run-current-program.sh "' .. filename .. '"')
+end)
+
 vim.api.nvim_create_user_command('Theme', function()
     if vim.opt.background._value == 'light' then
         vim.opt.background = 'dark'
