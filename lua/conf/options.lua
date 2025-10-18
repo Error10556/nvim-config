@@ -19,7 +19,7 @@ vim.opt.updatetime = 1000
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = ' '
-vim.keymap.set("n", "E", vim.cmd.Ex)
+vim.keymap.set("n", "<C-e>", vim.cmd.Ex)
 
 vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
 vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
