@@ -8,6 +8,8 @@ vim.lsp.config.gopls = {
     }
 }
 vim.lsp.enable('hls')
+vim.lsp.enable('pylsp', false)
+vim.lsp.enable('pyright')
 
 -- keybindings
 vim.api.nvim_create_autocmd('LspAttach', {

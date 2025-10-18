@@ -10,7 +10,7 @@ return {
         },
         opts = {
             ensure_installed = {
-                "clangd", "gopls"
+                "clangd", "gopls", "basedpyright"
             }
         }
     },

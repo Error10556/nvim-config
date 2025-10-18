@@ -15,15 +15,16 @@ However, this configuration provides LSP support for **many languages**.
    is, put the font files into a new subdirectory of
 `/usr/share/fonts/truetype/` and run `fc-cache`.
 2. Install `ripgrep` and `xclip`.
-3. Change directory into `~/.config/nvim`.
+3. Change directory into `~/.config/nvim`. Clear the directory if it contains files or subdirectories.
 4. Clone this repo: `git clone https://github.com/Error10556/nvim-config.git . --depth=1`
 5. Optionally, install language servers, formatters, linters, or debug adapters:
 open up `nvim`, type `:Mason`, and pick what you like. For a smooth experience, use
-    - `clangd`
-    - `debugpy` (but installed as a system-wide package `python3-debugpy`)
-    - `codelldb`
-    - `lua-language-server`
-    - `python-lsp-server`
+    - `clangd` for C/C++ (installed by default)
+    - `debugpy` for Python debugging (but installed as a system-wide package `python3-debugpy`)
+    - `codelldb` for C/C++ debugging
+    - `lua-language-server` for Lua
+    - `basedpyright` for Python (installed by default)
+    - `gopls` for Golang (installed by default)
 
 ## How to use
 
@@ -31,7 +32,7 @@ The configuration makes several remaps (custom bindings) and creates a few user 
 
 ### General
 
-- <kbd>Shift</kbd> + <kbd>E</kbd>: open Neovim's default file explorer, `netrw`.
+- <kbd>Ctrl</kbd> + <kbd>E</kbd>: open Neovim's default file explorer, `netrw`.
 - <kbd>Space</kbd>, <kbd>S</kbd>: replace all occurrences of the word under the caret.
 - <kbd>Space</kbd>, <kbd>O</kbd>: when used on an empty line, insert two empty lines (one above, one below) and start editing the middle one.
 - <kbd>Space</kbd>, <kbd>[</kbd>: insert a pair of square brackets and start editing an empty line between them.
@@ -58,7 +59,7 @@ insert a pair of curly braces and start editing an empty line between them.
 - <kbd>]</kbd>, <kbd>d</kbd>: go to the next problematic line.
 - <kbd>Space</kbd>, <kbd>=</kbd>: format the file using the LSP.
 - `:Clangfmt`: add a `.clang-format` file to the current working directory that
-contains my preferred C++ formatting settings.
+contains Microsoft-style C++ formatting settings.
 - <kbd>Ctrl</kbd> + <kbd>Space</kbd>: bring up the autocompletion menu if it is not already open.
 
 **In the autocompletion menu:**
@@ -151,5 +152,4 @@ article](https://igorlfs.github.io/neovim-cpp-dbg) that explains setting up a
 debugger;
 - [VonHeikemen](https://github.com/VonHeikemen) for [another amazing
 article](https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e)
-that explains integration of LSP servers.
-
+that explains LSP server integration.
