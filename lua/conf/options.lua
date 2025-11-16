@@ -38,6 +38,8 @@ vim.keymap.set('n', '<leader>o', 'O<CR>')
 
 vim.keymap.set('n', '<leader>{', 'A{<CR>}<Esc>O')
 vim.keymap.set('n', '<leader>[', 'A[<CR>]<Esc>O')
+vim.keymap.set('n', '<leader><leader>{', 'A {<CR>}<Esc>O')
+vim.keymap.set('n', '<leader><leader>[', 'A [<CR>]<Esc>O')
 
 vim.keymap.set('n', '<leader>a', 'ggVG"+y')
 

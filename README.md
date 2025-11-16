@@ -38,6 +38,10 @@ The configuration makes several remaps (custom bindings) and creates a few user 
 - <kbd>Space</kbd>, <kbd>[</kbd>: insert a pair of square brackets and start editing an empty line between them.
 - <kbd>Space</kbd>, <kbd>{</kbd> (which is <kbd>Space</kbd>, <kbd>Shift</kbd> + <kbd>[</kbd>):
 insert a pair of curly braces and start editing an empty line between them.
+- <kbd>Space</kbd>, <kbd>Space</kbd>, <kbd>[</kbd>: insert a pair of square brackets **with a space before the left
+bracket** and start editing an empty line between them.
+- <kbd>Space</kbd>, <kbd>Space</kbd>, <kbd>{</kbd> (which is <kbd>Space</kbd>, <kbd>Space</kbd>, <kbd>Shift</kbd> + <kbd>[</kbd>):
+insert a pair of curly braces **with a space before the left brace** and start editing an empty line between them.
 - <kbd>Space</kbd>, <kbd>A</kbd>: copy all the text in the file into the clipboard.
 - (In visual mode) <kbd>Shift</kbd> + <kbd>J</kbd>: move the selected lines down.
 - (In visual mode) <kbd>Shift</kbd> + <kbd>K</kbd>: move the selected lines up.
