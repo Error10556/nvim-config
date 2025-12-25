@@ -2,6 +2,10 @@
 
 This repo is a minimalistic yet capable configuration for Neovim.
 
+> If you are updating from an earlier version of this config,
+> reinstall `treesitter` in case it gives an error! Type `:Lazy`, press <kbd>x</kbd>
+> on `nvim-treesitter` to remove it, and then press <kbd>I</kbd> to install it again.
+
 ## Who is it for?
 
 If you program in **C++** or **Python**, you are going to enjoy the advanced debugging
@@ -14,17 +18,25 @@ However, this configuration provides LSP support for **many languages**.
 1. Install one of these fonts: https://www.nerdfonts.com/font-downloads. That
    is, put the font files into a new subdirectory of
 `/usr/share/fonts/truetype/` and run `fc-cache`.
-2. Install `ripgrep` and `xclip`.
-3. Change directory into `~/.config/nvim`. Clear the directory if it contains files or subdirectories.
-4. Clone this repo: `git clone https://github.com/Error10556/nvim-config.git . --depth=1`
-5. Optionally, install language servers, formatters, linters, or debug adapters:
+2. Install `ripgrep`, `xclip`, `tar`, `curl`, `python3-venv`, and `unzip`.
+3. Install `tree-sitter-cli` of version 0.26.1 or later. If you use Ubuntu where
+   this package is outdated, install it with `crates`:
+```bash
+# Install Rust - skip next 2 lines if already installed
+wget --timeout=5 https://sh.rustup.rs -O rustup.sh  # get the rust installer
+sh rustup.sh  # install Rust
+cargo install tree-sitter-cli
+```
+4. Change directory into `~/.config/nvim`. Clear the directory if it contains files or subdirectories.
+5. Clone this repo: `git clone https://github.com/Error10556/nvim-config.git . --depth=1`
+6. Optionally, install language servers, formatters, linters, or debug adapters:
 open up `nvim`, type `:Mason`, and pick what you like. For a smooth experience, use
     - `clangd` for C/C++ (installed by default)
     - `debugpy` for Python debugging (but installed as a system-wide package `python3-debugpy`)
     - `codelldb` for C/C++ debugging
     - `lua-language-server` for Lua
     - `basedpyright` for Python (installed by default)
-    - `gopls` for Golang (installed by default)
+    - `gopls` for Golang
 
 ## How to use
 
