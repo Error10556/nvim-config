@@ -19,8 +19,8 @@ However, this configuration provides LSP support for **many languages**.
    is, put the font files into a new subdirectory of
 `/usr/share/fonts/truetype/` and run `fc-cache`.
 2. Install `ripgrep`, `xclip`, `tar`, `curl`, `python3-venv`, and `unzip`.
-3. Install `tree-sitter-cli` of version 0.26.1 or later. If you use Ubuntu where
-   this package is outdated, install it with `crates`:
+3. Install `tree-sitter-cli` of version 0.26.1 or later. If you use Ubuntu or
+   another distro where this package is outdated, install it with `crates`:
 ```bash
 # Install Rust - skip next 2 lines if already installed
 wget --timeout=5 https://sh.rustup.rs -O rustup.sh  # get the rust installer
