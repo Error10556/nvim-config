@@ -5,7 +5,7 @@ return {{
     config = function()
         require'nvim-treesitter'.install{ "c", "lua", "vim", "vimdoc", "html",
         "xml", "cpp", "desktop", "bash", "python", "sql", "regex", "json",
-        "gitignore", "asm", "typst" }
+        "gitignore", "asm", "typst", "haskell" }
         vim.api.nvim_create_autocmd('FileType', {
             pattern = {
                 'python', 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'python',
