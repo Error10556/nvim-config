@@ -12,6 +12,11 @@
             "command": "g++ -ggdb ${relativeFile} -o ${fileBasenameNoExtension}.bin"
         },
         {
+            "label": "Compile-CS",
+            "type": "shell",
+            "command": "dotnet build"
+        },
+        {
             "label": "Clean",
             "type": "shell",
             "command": "rm -f ${fileBasenameNoExtension}{,.bin}"

@@ -54,6 +54,29 @@ local dapconfig = function()
     end
     -- The python adapter is deprecated, see nvim-dap-python#129
     dap.adapters.python = dap.adapters.debugpy
+
+    dap.adapters.coreclr = {
+        type = 'executable',
+        command = 'netcoredbg',
+        args = {'--interpreter=vscode'}
+    }
+
+    dap.configurations.cs = {
+        {
+            type = "coreclr",
+            name = "launch - netcoredbg",
+            request = "launch",
+            expressions = "native",
+            preLaunchTask = "Compile-CS",
+            program = function()
+                local path = vim.fn.getcwd()
+                local s, e = string.find(path, '/[^/]*$')
+                local sdkversion = vim.fn.input('SDK Version: ', 'net9.0')
+                return vim.fn.getcwd() .. '/bin/Debug/' .. sdkversion .. '/' .. string.sub(path, s + 1, e) .. '.dll'
+            end,
+        },
+    }
+
 end
 
 return {
