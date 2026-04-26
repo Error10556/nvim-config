@@ -48,6 +48,9 @@ vim.keymap.set('n', '<leader>z', function ()
     vim.cmd('!./run-current-program.sh "' .. filename .. '"')
 end)
 
+vim.opt.langmap = "йqцwуeкrеtнyгuшiщoзpх[ъ]фaыsвdаfпgрhоjлkдlж\\;э'яzчxсcмvиbтnьmб\\,ю.ё`" ..
+'ЙQЦWУEКRЕTНYГUШIЩOЗPХ{Ъ}ФAЫSВDАFПGРHОJЛKДLЖ:Э\\"ЯZЧXСCМVИBТNЬMБ<Ю>Ё?'
+
 vim.api.nvim_create_user_command('Theme', function()
     if vim.opt.background._value == 'light' then
         vim.opt.background = 'dark'
