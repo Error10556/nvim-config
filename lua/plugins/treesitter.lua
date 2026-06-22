@@ -1,23 +1,21 @@
 return {{
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    lazy = false,
+    "romus204/tree-sitter-manager.nvim",
+    dependencies = {}, -- tree-sitter CLI must be installed system-wide
     config = function()
-        require'nvim-treesitter'.install{ "c", "lua", "vim", "vimdoc", "html",
-        "xml", "cpp", "desktop", "bash", "python", "sql", "regex", "json",
-        "gitignore", "asm", "typst", "haskell" }
-        vim.api.nvim_create_autocmd('FileType', {
-            pattern = {
-                'python', 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'python',
-                'go', 'gomod', 'gowork', 'gotmpl', 'haskell', 'lua', 'typst'
+        require("tree-sitter-manager").setup({
+            ensure_installed = {
+                "c", "lua", "vim", "vimdoc", "html", "xml", "cpp", "desktop",
+                "bash", "python", "sql", "regex", "json", "gitignore", "asm",
+                "typst", "haskell"
             },
-            callback = function()
-                vim.treesitter.start()
-                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-                vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                vim.wo[0][0].foldmethod = 'expr'
-                vim.wo[0][0].foldlevel = 99
-            end
+            auto_install = true,
+            languages = { haskell = {
+                install_info = {
+                    revision = "98aedbd2d6947a168ba3ba3755d70b0cb6b78395",
+                    url = "https://github.com/tree-sitter-grammars/" ..
+                        "tree-sitter-haskell",
+                }},
+            },
         })
     end,
 }}
