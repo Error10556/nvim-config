@@ -10,6 +10,7 @@ vim.lsp.config.gopls = {
 vim.lsp.enable('hls')
 vim.lsp.enable('pylsp', false)
 vim.lsp.enable('pyright')
+vim.lsp.enable('cmake')
 
 -- keybindings
 vim.api.nvim_create_autocmd('LspAttach', {
